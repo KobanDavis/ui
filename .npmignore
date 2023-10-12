@@ -1,0 +1,8 @@
+src
+index.html
+
+.gitignore
+bun.lockb
+
+tsconfig.*
+*.config.*

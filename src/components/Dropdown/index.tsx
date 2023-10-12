@@ -1,9 +1,9 @@
-import React, { FC, useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import clsx from 'clsx'
 import { ThemeType } from '../../types'
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
-import Loading from '../Loading'
-import Button, { buttonStyles } from '../Button'
+import { Button, Loading } from '../../components'
+import { buttonStyles } from '../Button'
 import useDropdownPosition from './useDropdownPosition'
 
 interface DropdownProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'type' | 'onChange'> {
@@ -37,7 +37,7 @@ const Dropdown: FC<DropdownProps> = ({ disabled, className, type, items, placeho
 	return (
 		<div>
 			<Button
-				disabled={disabled || items ? items?.length === 0 : true}
+				disabled={disabled || (items ? items.length === 0 : true)}
 				type={type}
 				ref={dropdownRef}
 				onClick={() => setItemsAreVisible(loading ? false : !itemsAreVisible)}
@@ -52,7 +52,7 @@ const Dropdown: FC<DropdownProps> = ({ disabled, className, type, items, placeho
 					{items && items.length > 0 ? (
 						selectedItem ? (
 							<div className='flex items-center'>
-								{selectedItem.icon ? <img className='mr-2 h-4 w-4' src={selectedItem.icon} alt='' /> : null}
+								{selectedItem.icon ? <img className='mr-2 h-4 w-4' src={selectedItem.icon} /> : null}
 								{selectedItem.label}
 							</div>
 						) : (
@@ -89,7 +89,7 @@ const Dropdown: FC<DropdownProps> = ({ disabled, className, type, items, placeho
 									'flex items-center w-full cursor-pointer px-4 py-1.5 font-semibold text-xs transition-colors text-start'
 								)}
 							>
-								{icon ? <img className='mr-2 h-4 w-4' src={icon} alt='' /> : null}
+								{icon ? <img className='mr-2 h-4 w-4' src={icon} /> : null}
 								{label}
 							</div>
 						))}

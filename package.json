@@ -1,9 +1,10 @@
 {
 	"name": "@kobandavis/ui",
-	"version": "0.8.0",
+	"version": "1.0.0",
 	"repository": "https://github.com/KobanDavis/ui",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
+	"type": "module",
 	"scripts": {
 		"dev": "vite",
 		"preview": "vite preview",
