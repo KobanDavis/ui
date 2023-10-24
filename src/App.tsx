@@ -1,5 +1,5 @@
-import { Button, Card, Label, Link } from './components'
-import { FC } from 'react'
+import { Button, Card, Input, Label, Link, Textarea } from './components'
+import React, { FC } from 'react'
 import { CogIcon, CubeTransparentIcon, EyeDropperIcon } from '@heroicons/react/24/solid'
 import { useTheme } from './providers/theme'
 import { borderBase } from './lib/styles'
@@ -67,6 +67,22 @@ const App: FC = () => {
 						<Label>Default</Label>
 						<Label type='primary'>Primary</Label>
 						<Label type='secondary'>Secondary</Label>
+					</div>
+				</Card>
+
+				<Card title='Input'>
+					<div className='flex flex-col space-y-2 mb-2'>
+						<Input value='Default' />
+						<Input value='Primary' type='primary' />
+						<Input value='Secondary' type='secondary' />
+					</div>
+				</Card>
+
+				<Card title='Textarea'>
+					<div className='flex flex-col space-y-2 mb-2'>
+						<Textarea value='Default' />
+						<Textarea value='Primary' type='primary' />
+						<Textarea value='Secondary' type='secondary' />
 					</div>
 				</Card>
 			</div>
