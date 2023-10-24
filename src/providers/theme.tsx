@@ -1,6 +1,6 @@
 import { useState, useContext, createContext, useEffect } from 'react'
 import color from 'color'
-import type { FC, ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react'
 import { ThemeType } from '../types'
 
 interface ThemeProviderProps {
