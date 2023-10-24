@@ -1,8 +1,5 @@
-import plugin from 'tailwindcss/plugin'
-
 /** @type {import('tailwindcss').Config} */
-const config = {
-	content: ['./node_modules/@kobandavis/ui/index.js'],
+const preset = {
 	theme: {
 		extend: {
 			colors: {
@@ -20,4 +17,13 @@ const config = {
 	}
 }
 
-export const kdUI = () => plugin(() => {}, config)
+/** @param {import('tailwindcss').Config} config */
+export const kdUI = (config) => {
+	if (!('presets' in config)) {
+		config.presets = [preset]
+	} else {
+		config.presets.push(preset)
+	}
+
+	config.content.push('./node_modules/@kobandavis/ui/dist/index.js')
+}

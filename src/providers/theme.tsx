@@ -1,4 +1,4 @@
-import React, { useState, useContext, createContext, useEffect } from 'react'
+import { useState, useContext, createContext, useEffect } from 'react'
 import color from 'color'
 import type { FC, ReactNode } from 'react'
 import { ThemeType } from '../types'
@@ -17,7 +17,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ initialTheme, children, ...prop
 	const [theme, setTheme] = useState<ThemeContext['theme']>(
 		initialTheme ?? {
 			primary: '#000000',
-			secondary: '#ffffff',
+			secondary: '#ffffff'
 		}
 	)
 
@@ -34,7 +34,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ initialTheme, children, ...prop
 			'--theme-primary': color(theme.primary).rgb().array().join(' '),
 			'--theme-primary-light': color(theme.primary).lighten(0.05).string(),
 			'--theme-primary-lighter': color(theme.primary).lighten(0.1).string(),
-			'--theme-secondary': color(theme.secondary).rgb().array().join(' '),
+			'--theme-secondary': color(theme.secondary).rgb().array().join(' ')
 		}
 
 		Object.entries(variables).forEach((pair) => document.body.style.setProperty(...pair))

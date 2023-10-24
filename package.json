@@ -1,6 +1,6 @@
 {
 	"name": "@kobandavis/ui",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"repository": "https://github.com/KobanDavis/ui",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
 		"dev": "vite",
 		"preview": "vite preview",
 		"build": "rm -rf dist && bun run build:js && bun run build:types",
-		"build:js": "bun build src/index.ts --outdir dist --external react --external react-dom --external tailwind",
+		"build:js": "bun build src/index.ts --outdir dist --external react --external react-dom",
 		"build:types": "tsc -p tsconfig.build.json",
 		"prepublishOnly": "bun run build"
 	},
