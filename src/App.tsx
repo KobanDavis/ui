@@ -59,7 +59,11 @@ const App: FC = () => {
 				</Card>
 				<Card title='Link'>
 					<span>
-						This is a <Link>link</Link> inside a sentence
+						This is a{' '}
+						<Link href='https://google.com' target='_blank'>
+							link
+						</Link>{' '}
+						inside a sentence
 					</span>
 				</Card>
 				<Card title='Label'>

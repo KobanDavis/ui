@@ -5,13 +5,13 @@ import { ThemeType } from '../../types'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	type?: ThemeType
-	htmlType?: string
+	htmlType?: React.InputHTMLAttributes<HTMLInputElement>['type']
 }
 
 export const inputStyles = {
 	DEFAULT: clsx(borderHover, backgroundSecondaryHover),
 	primary: clsx('text-theme-secondary', backgroundPrimaryHover),
-	secondary: backgroundSecondaryHover,
+	secondary: backgroundSecondaryHover
 }
 
 const Input: FC<InputProps> = ({ className, type, htmlType, ...props }) => {
