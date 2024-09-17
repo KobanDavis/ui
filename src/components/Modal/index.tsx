@@ -6,11 +6,12 @@ interface ModalProps {
 	close(): void
 	loading?: boolean
 	children: () => React.ReactNode
+	closeOnOutsideClick?: boolean
 }
 
-const Modal: FC<ModalProps> = ({ close, loading, children }) => {
+const Modal: FC<ModalProps> = ({ close, closeOnOutsideClick = true, loading, children }) => {
 	const handleOutsideClick = (e: React.MouseEvent<HTMLDivElement>) => {
-		if (e.target === e.currentTarget) {
+		if (closeOnOutsideClick && e.target === e.currentTarget) {
 			close()
 		}
 	}
@@ -20,7 +21,10 @@ const Modal: FC<ModalProps> = ({ close, loading, children }) => {
 			<Loading size={8} />
 		</div>
 	) : (
-		<div onClick={handleOutsideClick} className={clsx('flex justify-center h-screen w-full fixed top-0 left-0 backdrop-blur p-4 overflow-y-auto')}>
+		<div
+			onClick={handleOutsideClick}
+			className={clsx('flex justify-center h-screen w-full fixed top-0 left-0 backdrop-blur p-4 overflow-y-auto')}
+		>
 			{children()}
 		</div>
 	)
