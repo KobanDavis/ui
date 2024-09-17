@@ -6,3 +6,4 @@ bun.lockb
 
 tsconfig.*
 *.config.*
+.npmrc
